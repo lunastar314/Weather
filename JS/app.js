@@ -53,7 +53,7 @@ $(document).ready(function(){
 		
 	function getTempImage(temperature) {
 		if ( temperature > .30 )
-			return '<img src= "WeatherAppBG30.jpg"/>';
+			return '<img src="WeatherAppBG30.jpg"/>';
 		
 });
 /*var weeklyForecast = ["clear-day", "rain", "rain", "wind", "cloud", "cloud", "fog"];
