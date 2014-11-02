@@ -55,7 +55,7 @@ $(document). ready(function(){
 		if ( temperature > .30 )
 			return '<img src= "WeatherAppBG30.jpg"/>';
 		
-		
+		});
 /*var weeklyForecast = ["clear-day", "rain", "rain", "wind", "cloud", "cloud", "fog"];
     for ( var i = 0; i < weeklyForecast.length; i++) {
         var dailyWeather = weeklyForecast[i];
