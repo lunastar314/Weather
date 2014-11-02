@@ -46,14 +46,68 @@ $(document).ready(function(){
 					}
 			});
 		}
+	
+
+	// Parse and use the weather values from the forecast.io JSON
 	function parseWeather(data) {
+		
 		var tempImage = getTempImage(data.currently.apparentTemperature);
+		//var tempImage = data.currently.apparentTemperature;
+		//var temp = data.currently.apparentTemperature;
 		$('#temp').text("Currently: " + data.currently.apparentTemperature);
 		$('#temp').addClass('degrees');
 		
-	function getTempImage(temperature) {
-		if ( temperature > .30 )
-			return '<img src="WeatherAppBG30.jpg"/>';
-		
 	}
 });
+
+	function getTempImage(temperature) {
+		if ( temperature > .30 )
+			return '<img src="WeatherAppBG30.jpg" />';
+			
+	}
+
+	
+	/*
+	
+	// Parse and use the weather values from the forecast.io JSON
+	function parseWeather(data) {
+		var precipColor = getPrecipColor(data.currently.precipProbability);
+		var tempColor	= data.currently.apparentTemperature;
+		windSpeed = data.currently.windSpeed;
+		$('#temp').text("Currently: " + data.currently.apparentTemperature);
+		$('#temp').addClass('degrees');
+		$('body').css('background-color',precipColor);
+		addWindAnimation();
+	}
+
+	// Show an error if we can't access the weather
+	function showError(){
+		$('#temp').text('Oh no! Your forecast is currently unavailable.');
+		$('body').css('background-color','rgb(240,14,10');	
+	}
+
+
+	// Convenience function - returns 1 of 4 colors based on the perciptation percentage
+	function getPrecipColor(precipitation) {
+		if ( precipitation > .75 ) 
+			return	'#3686FF';
+		if ( precipitation > .50 ) 
+			return	'#A8BDD8';
+		if ( precipitation > .25 ) 
+			return	'#C6DFFF';
+		return '#FFFFFF';
+	}
+
+	var windSpeed;
+	function addWindAnimation(){
+		$('#temp').animate({ left: '+='+windSpeed  }, 2000 )
+				  .animate({left: '-='+ windSpeed  },2000,addWindAnimation);
+	}
+
+}
+);
+
+*/
+	
+	
+	
