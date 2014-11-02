@@ -1,0 +1,11 @@
+html,body{
+#temp {
+	position: relative;
+	margin-top:0px;
+   font-size:100px;	
+   -webkit-text-stroke: .5px #FFFFFF;
+}
+
+.degrees:after {
+	content: "\00b0";
+}
