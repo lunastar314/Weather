@@ -7,7 +7,7 @@ $(document).ready(function(){
 	
 	// Request the user's Latitude/Longitude
 	if (Modernizr.geolocation) {
-			navigator.geolocation.getCurrentPosition(success, error);
+				navigator.geolocation.getCurrentPosition(success, error);
 		}
 		else {
 			//Prompt User
