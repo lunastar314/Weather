@@ -46,36 +46,47 @@ $(document). ready(function(){
 					}
 			});
 		}
-		//3. Insert weather data into app and stylize
+	function parseWeather(data) {
+		var tempImage = getTempImage(data.currently.apparentTemperature);
+		$('#temp').text("Currently: " + data.currently.apparentTemperature);
+		$('#temp').addClass('degrees');
 		
-		//Parse and use the weather values from the forecast.io JSON
+	function getTempImage(temperature) {
+		if ( temperature > .30 )
+			return '<img src= "WeatherAppBG30.jpg"/>';
 		
-		function parseWeather(data) {
-			var precipColor = getPrecipColor(data.currently.precipProbability);
-			var tempColor = data.currently.apparentTemperature;
-			windSpeed = data.currently.windSpeed;
-			$('#temp').text("Currently: " + data.currently.apparentTemperature);
-			$('#temp').addClass('degrees');
-			$('body').css('background-color' ,precipColor);
-			addWindAnimation();
-		}
 		
-		//Show an error if we can't access the weather
-		
-		function showError(){
-			$('#temp').text('Oh no! Your forecast is currently unavailable.');
-			$('body').css('background-color','rgb(240,14,10');
-		}
-		
-		//Convenience function - returns 1 of 4 colors based on the percipitation percentage
-		function getPrecipColor(precipitation) {
-			if ( precipitation > .75 )
-				return '#3686FF';
-			if ( precipitation > .50 )
-				return '#A8BDD8';
-			if ( precipitation > .25 )
-				return '#C6DFFF';
-			return '#FFFFFF';
-		}
-		
-		});
+/*var weeklyForecast = ["clear-day", "rain", "rain", "wind", "cloud", "cloud", "fog"];
+    for ( var i = 0; i < weeklyForecast.length; i++) {
+        var dailyWeather = weeklyForecast[i];
+        var day = $('li').get(i);
+        var color = parseDay(dailyWeather);
+        $(day).css( 'background-color', color );
+    }
+
+    function parseDay(condition){
+
+    	switch(condition) {
+    		case "clear-day":
+    		case "clear-night":	
+                var color = "rgb(200,200,0)";
+                break;
+    		case "rain":
+    		case "snow":
+    		case "sleet":
+                var color = "rgb(0,0,200)";
+                break;
+    		case "wind":
+    		case "fog":
+    		case "cloudy":
+    		case "partly-cloudy-day":
+    		case "partly-cloudy-night":
+                var color = "rgb(125,125,125)";
+                break;
+    		default:
+    			break;	
+    	}
+        return color;
+
+    }
+});
