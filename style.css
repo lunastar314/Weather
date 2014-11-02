@@ -1,4 +1,4 @@
-html,body{
+
 #temp {
 	position: relative;
 	margin-top:0px;
@@ -9,3 +9,9 @@ html,body{
 .degrees:after {
 	content: "\00b0";
 }
+
+#wrapper {
+	width: 400px;
+	height: 400px;
+	background-color: #efefef;
+	}
