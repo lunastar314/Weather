@@ -1,4 +1,4 @@
-$(document). ready(function(){
+$(document).ready(function(){
 
 	var apiKey = '9dd895f2e791fb8329d7d7f729d1e016';
 	var apiURL = 'https://api.forecast.io/forecast/' + apiKey;
@@ -55,7 +55,7 @@ $(document). ready(function(){
 		if ( temperature > .30 )
 			return '<img src= "WeatherAppBG30.jpg"/>';
 		
-		});
+});
 /*var weeklyForecast = ["clear-day", "rain", "rain", "wind", "cloud", "cloud", "fog"];
     for ( var i = 0; i < weeklyForecast.length; i++) {
         var dailyWeather = weeklyForecast[i];
