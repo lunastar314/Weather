@@ -1,6 +1,7 @@
 #temp {
 	position: relative;
 	margin-top:0px;
+	font-family:"Avenir", sans serif;
    font-size:50px;	
    -webkit-text-stroke: .5px #FFFFFF;
    text-align:center;
