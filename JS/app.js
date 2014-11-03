@@ -7,7 +7,7 @@ $(document).ready(function(){
 	
 	// Request the user's Latitude/Longitude
 	if (Modernizr.geolocation) {
-			navigator.geolocation.getCurrentPosition(success, error);
+				navigator.geolocation.getCurrentPosition(success, error);
 		}
 		else {
 			//Prompt User
@@ -26,37 +26,29 @@ $(document).ready(function(){
 		}
 		
 		//Request weather from forecast.io with a Latitude/Longitude
-		
-	function getWeatherWithPos(lat,lng) {
+		function getWeatherWithPos(lat,lng) {
 			//Construct the url to request
-			apiURL += "/" + lat + "," + lng;
+			apiURL += "/" + lat + lng;
 			console.log(apiURL);
 			
 			//Make a request to forecast.io
-			
-		$.ajax({
-			url: apiURL,
-			type: "GET",
-			crossDomain: true,
+			$.ajax({
+					url: apiURL,
+					type: "GET",
+					crossDomain: true,
 		dataType: 'jsonp',
-			success: function (response) {
-				//The request succeeded
-				console.log(response);
-				parseWeather(response);
-				$('#loader').remove();
-			},
-			error: function (xhr, status) {
-				//The request failed
-			console.log(status);
-			$('#loader').remove();
-			showError();
-			}
-		});
-	}
+					success: function (response) {
+					//The request succeeded
+					console.log(response);
+					parseWeather(response);
+					$('#loader').remove();
+					showError();
+					}
+			});
+		}
 	
 
 	// Parse and use the weather values from the forecast.io JSON
-	
 	function parseWeather(data) {
 		
 		var tempImage = getTempImage(data.currently.apparentTemperature);
@@ -66,7 +58,7 @@ $(document).ready(function(){
 		$('#temp').addClass('degrees');
 		
 	}
-
+});
 
 	function getTempImage(temperature) {
 		if ( temperature > .30 )
@@ -74,7 +66,7 @@ $(document).ready(function(){
 			
 	}
 
-});
+	
 	/*
 	
 	// Parse and use the weather values from the forecast.io JSON
@@ -116,3 +108,6 @@ $(document).ready(function(){
 );
 
 */
+	
+	
+	
