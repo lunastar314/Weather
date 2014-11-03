@@ -28,7 +28,7 @@ $(document).ready(function(){
 		//Request weather from forecast.io with a Latitude/Longitude
 		function getWeatherWithPos(lat,lng) {
 			//Construct the url to request
-			apiURL += "/" + lat + lng;
+			apiURL += "/" + lat + ',' +  lng;
 			console.log(apiURL);
 			
 			//Make a request to forecast.io
@@ -36,13 +36,16 @@ $(document).ready(function(){
 					url: apiURL,
 					type: "GET",
 					crossDomain: true,
-		dataType: 'jsonp',
+					dataType: 'jsonp',
 					success: function (response) {
 					//The request succeeded
 					console.log(response);
 					parseWeather(response);
 					$('#loader').remove();
-					showError();
+					},
+					error: function (xhr, status) {
+						console.log(status);
+						showError();
 					}
 			});
 		}
@@ -51,21 +54,28 @@ $(document).ready(function(){
 	// Parse and use the weather values from the forecast.io JSON
 	function parseWeather(data) {
 		
-		var tempImage = getTempImage(data.currently.apparentTemperature);
+		//var tempImage = getTempImage(data.currently.apparentTemperature);
 		//var tempImage = data.currently.apparentTemperature;
 		//var temp = data.currently.apparentTemperature;
-		$('#temp').text("Currently: " + data.currently.apparentTemperature);
+		$('#temp').text("Now " + data.currently.apparentTemperature);
 		$('#temp').addClass('degrees');
 		
 	}
 });
 
 	function getTempImage(temperature) {
-		if ( temperature > .30 )
-			return '<img src="WeatherAppBG30.jpg" />';
-			
+		if ( temperature > .30 ) 
+			return ;
+	
 	}
+	
+	
+	
+	
+	//ARRAY TRY
 
+
+	
 	
 	/*
 	
