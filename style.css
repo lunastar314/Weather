@@ -1,8 +1,9 @@
 #temp {
 	position: relative;
 	margin-top:0px;
-   font-size:100px;	
+   font-size:50px;	
    -webkit-text-stroke: .5px #FFFFFF;
+   text-align:center;
 }
 
 .degrees:after {
@@ -10,7 +11,8 @@
 }
 
 #wrapper {
-	width: 400px;
-	height: 400px;
+	float: right;
+	width: 170px;
+	height: 125px;
 	background-color: #efefef;
 	}
