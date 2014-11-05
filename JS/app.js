@@ -52,72 +52,60 @@ $(document).ready(function(){
 	
 
 	// Parse and use the weather values from the forecast.io JSON
+	
+
 	function parseWeather(data) {
-		
-		//var tempImage = getTempImage(data.currently.apparentTemperature);
-		//var tempImage = data.currently.apparentTemperature;
-		//var temp = data.currently.apparentTemperature;
-		$('#temp').text("Now " + data.currently.apparentTemperature);
+		$('#temp').text("Now " +(Math.round(data.currently.apparentTemperature)));
 		$('#temp').addClass('degrees');
 		
-	}
-});
+	
+	var today = data.currently;
+	var imageFile= parseIcon(today.icon);
+		console.log(imageFile);
 
-	function getTempImage(temperature) {
-		if ( temperature > .30 ) 
-			return ;
-	
-	}
-	
-	
-	
-	
-	//ARRAY TRY
+	 $('<img>').attr("src", "images/"+ data.currently.icon +  ".jpg").appendTo('#wrapper');
+		console.log(today.icon);
 
+	 function parseIcon(icon){
 
-	
-	
-	/*
-	
-	// Parse and use the weather values from the forecast.io JSON
-	function parseWeather(data) {
-		var precipColor = getPrecipColor(data.currently.precipProbability);
-		var tempColor	= data.currently.apparentTemperature;
-		windSpeed = data.currently.windSpeed;
-		$('#temp').text("Currently: " + data.currently.apparentTemperature);
-		$('#temp').addClass('degrees');
-		$('body').css('background-color',precipColor);
-		addWindAnimation();
+	    	switch(icon) {
+
+	    		case "wind":
+    			case "partly-cloudy-day":	
+                	   var img = "windyDay.jpg";
+			
+				break;
+
+			case "wind":
+			case "partly-cloudy-night":	
+                	   var img = "partly-cloudy-night.jpg";
+
+	               		 break;
+    			case "rain":
+                	  var img = "rainyDay.jpg";
+
+	               		 break;
+    			case "snow":
+			case "sleet":
+        	           var img = "snowyDay.jpg";
+                	
+				break;
+               	 return color;
+    			default: "#d86b93";
+    				break;	
+		 return color;
 	}
+    }
+
 
 	// Show an error if we can't access the weather
 	function showError(){
-		$('#temp').text('Oh no! Your forecast is currently unavailable.');
-		$('body').css('background-color','rgb(240,14,10');	
+		$('#temp').text('Uh-Oh! Style Weather is currently unavailable.');
+		$('body').css('background-color','rgb(236,93,183');	
+		}
+
+
+
 	}
 
-
-	// Convenience function - returns 1 of 4 colors based on the perciptation percentage
-	function getPrecipColor(precipitation) {
-		if ( precipitation > .75 ) 
-			return	'#3686FF';
-		if ( precipitation > .50 ) 
-			return	'#A8BDD8';
-		if ( precipitation > .25 ) 
-			return	'#C6DFFF';
-		return '#FFFFFF';
-	}
-
-	var windSpeed;
-	function addWindAnimation(){
-		$('#temp').animate({ left: '+='+windSpeed  }, 2000 )
-				  .animate({left: '-='+ windSpeed  },2000,addWindAnimation);
-	}
-
-}
-);
-
-*/
-	
-	
-	
+});
