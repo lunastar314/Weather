@@ -57,7 +57,7 @@ $(document).ready(function(){
 	function parseWeather(data) {
 		$('#temp').text("Now " +(Math.round(data.currently.apparentTemperature)));
 		$('#temp').addClass('degrees');
-		
+		$('#sum').text(data.currently.summary);
 	
 	var today = data.currently;
 	var imageFile= parseIcon(today.icon);
