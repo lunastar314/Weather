@@ -19,6 +19,16 @@ img {
 	content: "\00b0";
 }
 
+#sum {
+	position: relative;
+	left:900px;
+	margin-top:50px;
+	font-family:"Avenir", sans serif;
+   	font-size:50px;	
+        text-align:center;
+	background-color: #efefef;
+	width: 300px;
+}
 
 #wrapper {
 	float:center;
