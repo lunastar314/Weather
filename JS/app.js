@@ -72,7 +72,7 @@ $(document).ready(function(){
 
 	    		case "wind":
     			case "partly-cloudy-day":	
-                	   var img = "windyDay.jpg";
+                	   var img = "partly-cloudy-day.jpg";
 			
 				break;
 
