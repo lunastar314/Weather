@@ -1,19 +1,30 @@
+#wrapper {
+	float:center;
+	margin-top:10px;
+	width: 200px;
+	height: 200px;
+	background-color: #ffffff;
+	}
+
+
+img {
+	width: auto;
+	height: auto;
+}
+
+
 #temp {
 	position: relative;
-	margin-top:0px;
-	font-family:"Avenir", sans serif;
-   font-size:50px;	
-   -webkit-text-stroke: .5px #FFFFFF;
-   text-align:center;
+	margin-top:200px;
+	font-family:"Avenir", "Helvetica", sans serif;
+   	font-size:50px;
+	color:	
+        text-align:left;
 }
 
 .degrees:after {
 	content: "\00b0";
 }
 
-#wrapper {
-	float: right;
-	width: 170px;
-	height: 125px;
-	background-color: #efefef;
-	}
+
+	
