@@ -1,0 +1,30 @@
+#wrapper {
+	float:center;
+	margin-top:10px;
+	width: 200px;
+	height: 200px;
+	background-color: #ffffff;
+	}
+
+
+img {
+	width: auto;
+	height: auto;
+}
+
+
+#temp {
+	position: relative;
+	margin-top:200px;
+	font-family:"Avenir", "Helvetica", sans serif;
+   	font-size:50px;
+	color:	
+        text-align:left;
+}
+
+.degrees:after {
+	content: "\00b0";
+}
+
+
+	
