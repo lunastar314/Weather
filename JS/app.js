@@ -60,7 +60,7 @@ $(document).ready(function(){
 		$('#sum').text(data.currently.summary);
 	
 	var today = data.currently;
-	var imageFile= parseIcon(today.icon);
+	var imageFile= parseIcon(data.daily.data[1]);
 		console.log(imageFile);
 
 	 //$('<img>').attr("src", "images/"+ imageFile).appendTo('#wrapper');
