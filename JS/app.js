@@ -63,7 +63,7 @@ $(document).ready(function(){
 	var imageFile= parseIcon(today.icon);
 		console.log(imageFile);
 
-	 $('<img>').attr("src", "images/"+ data.currently.icon +  ".jpg").appendTo('#wrapper');
+	 $('<img>').attr("src", "images/"+ imageFile).appendTo('#wrapper');
 		console.log(today.icon);
 
 	 function parseIcon(icon){
@@ -76,7 +76,7 @@ $(document).ready(function(){
 			
 				break;
 
-			case "wind":
+			
 			case "partly-cloudy-night":	
                 	   var img = "partly-cloudy-night.jpg";
 
