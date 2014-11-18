@@ -59,8 +59,8 @@ $(document).ready(function(){
 		$('#temp').addClass('degrees');
 		$('#sum').text(data.currently.summary);
 	
-	var today = data.currently;
-	var imageFile= parseIcon(data.daily.data[1]);
+	var today = data.currently.apparentTemperature;
+	var imageFile= parseIcon(data.currently.icon);
 		console.log(imageFile);
 
 	 //$('<img>').attr("src", "images/"+ imageFile).appendTo('#wrapper');
