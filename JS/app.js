@@ -63,10 +63,10 @@ $(document).ready(function(){
 	var imageFile= parseIcon(data.currently.icon);
 		console.log(imageFile);
 
-	 //$('<img>').attr("src", "images/"+ imageFile).appendTo('#wrapper');
-	 var img= $('<img>');
-	 img.attr("src","images/" + imageFile);
-	 img.appendTo('#icon');
+	 $('<img>').attr("src", "images/"+ imageFile).appendTo('#wrapper');
+	// var img= $('<img>');
+	// img.attr("src","images/" + imageFile);
+	// img.appendTo('#icon');
 		console.log(today.icon);
 
 	 function parseIcon(icon){
