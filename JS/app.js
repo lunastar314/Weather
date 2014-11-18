@@ -72,10 +72,10 @@ $(document).ready(function(){
 		console.log(today.icon);
 	}
 	
-	 function parseIcon(icon){
-
-	    	switch(icon) {
-
+	 function parseIcon(icon)
+	 {
+	    	switch(icon) 
+	    	{
 	    		case "cloudy":
 	    		case "wind":
     			case "partly-cloudy-day":	
@@ -99,19 +99,16 @@ $(document).ready(function(){
 				break;
     			default: "#d86b93";
     				break;	
-		 return img;
-	}
-    }
+		}
+		return img;
+    	}
 
 
 	// Show an error if we can't access the weather
-	function showError(){
+	function showError()
+	{
 		$('#temp').text('Uh-Oh! Style Weather is currently unavailable.');
 		$('body').css('background-color','rgb(236,93,183');	
-		}
-
-
-
 	}
 
 });
