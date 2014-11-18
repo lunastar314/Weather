@@ -61,7 +61,8 @@ $(document).ready(function(){
 	
 	var today = data.currently.apparentTemperature;
 	var imageFile= parseIcon(data.currently.icon);
-		console.log(imageFile);
+	console.log("condition: "+ data.currently.icon);
+		console.log("image file: " + imageFile);
 
 	 $('<img>').attr("src", "images/"+ imageFile).appendTo('#wrapper');
 	// var img= $('<img>');
