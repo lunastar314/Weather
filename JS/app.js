@@ -54,22 +54,24 @@ $(document).ready(function(){
 	// Parse and use the weather values from the forecast.io JSON
 	
 
-	function parseWeather(data) {
+	function parseWeather(data) 
+	{
 		$('#temp').text("Now " +(Math.round(data.currently.apparentTemperature)));
 		$('#temp').addClass('degrees');
 		$('#sum').text(data.currently.summary);
 	
-	var today = data.currently.apparentTemperature;
-	var imageFile= parseIcon(data.currently.icon);
-	console.log("condition: "+ data.currently.icon);
+		var today = data.currently.apparentTemperature;
+		var imageFile= parseIcon(data.currently.icon);
+		console.log("condition: "+ data.currently.icon);
 		console.log("image file: " + imageFile);
 
-	 $('<img>').attr("src", "images/"+ imageFile).appendTo('#wrapper');
-	// var img= $('<img>');
-	// img.attr("src","images/" + imageFile);
-	// img.appendTo('#icon');
+		 $('<img>').attr("src", "images/"+ imageFile).appendTo('#wrapper');
+		// var img= $('<img>');
+		// img.attr("src","images/" + imageFile);
+		// img.appendTo('#icon');
 		console.log(today.icon);
-
+	}
+	
 	 function parseIcon(icon){
 
 	    	switch(icon) {
