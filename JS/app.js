@@ -95,10 +95,9 @@ $(document).ready(function(){
         	           var img = "snowyDay.jpg";
                 	
 				break;
-               	 return color;
     			default: "#d86b93";
     				break;	
-		 return color;
+		 return img;
 	}
     }
 
