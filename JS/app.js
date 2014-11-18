@@ -80,7 +80,7 @@ $(document).ready(function(){
 			
 				break;
 
-			
+			case "cloudy":
 			case "partly-cloudy-night":	
                 	   var img = "partly-cloudy-night.jpg";
 
