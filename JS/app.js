@@ -73,6 +73,7 @@ $(document).ready(function(){
 
 	    	switch(icon) {
 
+	    		case "cloudy":
 	    		case "wind":
     			case "partly-cloudy-day":	
                 	   var img = "partly-cloudy-day.jpg";
